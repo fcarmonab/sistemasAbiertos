@@ -35,9 +35,8 @@ while [ $opcion -ne 0 ]; do
           clear
           echo "Iniciando descarga de ficheros y directorios de SuiteCRM:";
           sudo su
-          sudo chmod -R 777 sistemasAbiertos
-          cd sistemasAbiertos
           sudo git clone https://github.com/salesagility/SuiteCRM.git suitecrm
+          sudo chmod -R 777 suitecrm
           mv suitecrm /var/www/
           cd /var/www/
           sudo chown -R www-data.www-data suitecrm
@@ -81,14 +80,18 @@ while [ $opcion -ne 0 ]; do
           ;;
         7)
           clear
-          sudo cd /home/usuario/sistemasAbiertos
+          sudo cd /home/ubuntu/sistemasAbiertos
           sudo cp php.ini temp1.ini
           sudo chmod -R 777 php.ini
           sudo mv php.ini /etc/php/7.4/apache2/php.ini
+          sudo cp temp1.ini php.ini
+          sudo chmod -R 777 php.ini
           sudo systemctl restart apache2
           sudo cp suitecrm.conf temp2.conf
           sudo chmod -R 777 suitecrm.conf
           sudo mv suitecrm.conf /etc/apache2/sites-available/suitecrm.conf
+          sudo cp temp2.conf suitecrm.conf
+          sudo chmod -R 777 suitecrm.conf
           sudo systemctl restart apache2
           sudo a2ensite suitecrm.conf
           sudo systemctl restart apache2
