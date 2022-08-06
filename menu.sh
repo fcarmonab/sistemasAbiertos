@@ -80,7 +80,7 @@ while [ $opcion -ne 0 ]; do
         5)
           clear
           cd /var/www/suitecrm/
-          udo chown -R www-data:www-data .
+          sudo chown -R www-data:www-data .
           sudo chmod -R 755 .
           sudo chmod -R 775 cache custom modules themes data upload
           sudo chmod 775 config_override.php 2>/dev/null
