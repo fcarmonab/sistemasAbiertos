@@ -74,8 +74,9 @@ read opcion
         5)
           clear
           cd /var/www/suitecrm/
+          sudo mkdir cache
           sudo chown -R www-data:www-data .
-          sudo chmod -R 755 .
+          sudo chmod -5 .
           sudo chmod -R 775 cache custom modules themes data upload
           sudo chmod 775 config_override.php 2>/dev/null
           sudo a2ensite suitecrm.conf
@@ -87,7 +88,7 @@ read opcion
         0)
           clear
           echo "Saliendo del menu..."
-          sleep 3
+          sleep 2
           opcion = 0
           ;;
         *)
