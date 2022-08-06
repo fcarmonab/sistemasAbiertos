@@ -1,6 +1,6 @@
 #! /bin/bash
 usuario=$(whoami)
-opcion=1
+opcion=11
 clear
 
 echo "---------- MENU INSTALACION DE SUITECRM ----------"
