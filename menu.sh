@@ -46,10 +46,6 @@ while [ $opcion -ne 0 ]; do
           sleep 6
           chown -R www-data.www-data suitecrm
           chmod -R 775 suitecrm
-          apt-get install composer -y
-          cd suitecrm/
-          composer install
-          clear
           sudo apt remove php8*
           sudo apt-get purge php*
           sudo apt-get autoremove
@@ -59,6 +55,10 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get install php7.4 -y
           sudo apt-get install php7.4-cli php7.4-common php7.4-pgsql php7.4-json php7.4-opcache php7.4-mysql php7.4-mbstring php7.4-fpm php7.4-intl php7.4-simplexml  php7.4-gd php7.4-mcrypt php7.4-soap php7.4-bcmath libapache2-mod-php7.4 php7.4-xml php7.4-common php7.4-cli php7.4-curl php7.4-intl php7.4-xmlrpc php7.4-json php7.4-zip zip unzip -y
           sudo systemctl restart apache2
+          apt-get install composer -y
+          cd suitecrm/
+          composer install
+          clear
           clear
           opcion=0
           ;;
