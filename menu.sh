@@ -2,7 +2,6 @@
 usuario=$(whoami)
 opcion=1
 clear
-sudo su
 
 echo "---------- MENU INSTALACION DE SUITECRM ----------"
 echo "=================================================="
@@ -25,8 +24,8 @@ while [ $opcion -ne 0 ]; do
         1)
           clear
           echo "Iniciando instalacion de GIT";
-          apt-get update
-          apt-get install git -y
+          sudo apt-get update
+          sudo apt-get install git -y
           clear
           $opcion=0
           sudo /home/ubuntu/menu.sh
@@ -34,19 +33,19 @@ while [ $opcion -ne 0 ]; do
         2)
           clear
           echo "Iniciando descarga de SuiteCRM e Instalacion de Composer:"
-          mkdir tmp
+          sudo mkdir tmp
           cd /tmp/
           sudo git clone https://github.com/salesagility/SuiteCRM.git suitecrm
           clear
           ls
           sleep 6
-          mv suitecrm /var/www/
+          sudo mv suitecrm /var/www/
           cd /var/www/
           clear
           ls
           sleep 6
-          chown -R www-data.www-data suitecrm
-          chmod -R 775 suitecrm
+          sudo chown -R www-data.www-data suitecrm
+          sudo chmod -R 775 suitecrm
           sudo apt remove php8*
           sudo apt-get purge php*
           sudo apt-get autoremove
@@ -56,9 +55,9 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get install php7.4 -y
           sudo apt-get install php7.4-cli php7.4-common php7.4-pgsql php7.4-json php7.4-opcache php7.4-mysql php7.4-mbstring php7.4-fpm php7.4-intl php7.4-simplexml  php7.4-gd php7.4-mcrypt php7.4-soap php7.4-bcmath libapache2-mod-php7.4 php7.4-xml php7.4-common php7.4-cli php7.4-curl php7.4-intl php7.4-xmlrpc php7.4-json php7.4-zip zip unzip -y
           sudo systemctl restart apache2
-          apt-get install composer -y
+          sudo apt-get install composer -y
           cd suitecrm/
-          composer install
+          sudo composer install
           clear
           $opcion=0
           sudo /home/ubuntu/menu.sh
