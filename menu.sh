@@ -81,7 +81,7 @@ while [ $opcion -ne 0 ]; do
           ;;
         7)
           clear
-          cd /home/usuario/sistemasAbiertos
+          sudo cd /home/usuario/sistemasAbiertos
           sudo cp php.ini temp1.ini
           sudo chmod -R 777 php.ini
           sudo mv php.ini /etc/php/7.4/apache2/php.ini
