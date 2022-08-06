@@ -61,6 +61,12 @@ while [ $opcion -ne 0 ]; do
           ;;
         5)
           clear
+          sudo cp php.ini temp1.ini
+          sudo apt remove php8*
+          sudo apt-get purge php*
+          sudo apt-get autoremove
+          sudo apt-get autoclean
+          sudo cp temp1.ini php.ini
           sudo add-apt-repository ppa:ondrej/php
           sudo apt-get update
           sudo apt-get install php7.4 -y
@@ -79,7 +85,7 @@ while [ $opcion -ne 0 ]; do
           ;;
         7)
           clear
-          sudo cd /home/ubuntu/sistemasAbiertos
+          cd /home/ubuntu/sistemasAbiertos
           sudo cp php.ini temp1.ini
           sudo chmod -R 777 php.ini
           sudo mv php.ini /etc/php/7.4/apache2/php.ini
