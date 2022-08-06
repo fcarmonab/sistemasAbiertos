@@ -1,7 +1,9 @@
 #! /bin/bash
 usuario=$(whoami)
-opcion=1
+opcion = 1
 clear
+
+while [ $opcion -ne 0 ]; do
 
 echo "---------- MENU INSTALACION DE SUITECRM ----------"
 echo "=================================================="
@@ -18,8 +20,6 @@ echo ""
 echo "SELECCIONE OPCION:"
 read opcion
 
-while [ $opcion -ne 0 ]; do
-
       case $opcion in
         1)
           clear
@@ -27,7 +27,6 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get update
           sudo apt-get install git -y
           clear
-          sudo /home/ubuntu/menu.sh
           ;;
         2)
           clear
@@ -58,14 +57,12 @@ while [ $opcion -ne 0 ]; do
           cd suitecrm/
           sudo composer install
           clear
-          sudo /home/ubuntu/menu.sh
           ;;
         3)
           clear
           echo "Instalando Apache:"
           sudo apt-get install apache2 -y
           clear
-          sudo /home/ubuntu/menu.sh
           ;;
         4)
           clear
@@ -73,7 +70,6 @@ while [ $opcion -ne 0 ]; do
           sudo mysql -u root < script.sql
           sudo systemctl restart apache2
           clear
-          sudo /home/ubuntu/menu.sh
           ;;
         5)
           clear
@@ -87,13 +83,12 @@ while [ $opcion -ne 0 ]; do
           sudo a2dissite 000-default.conf
           sudo systemctl restart apache2
           clear
-          sudo /home/ubuntu/menu.sh
           ;;
         0)
           clear
           echo "Saliendo del menu..."
-          sleep 5
-          opcion=0
+          sleep 3
+          opcion = 0
           ;;
         *)
           echo "Opcion no existe." 
