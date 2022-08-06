@@ -89,6 +89,7 @@ while [ $opcion -ne 0 ]; do
           sudo a2dissite 000-default.conf
           sudo systemctl restart apache2
           clear
+          ;;
         0)
           clear
           echo "Saliendo del menu..."
