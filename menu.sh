@@ -29,7 +29,7 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get update
           sudo apt-get install git -y
           clear
-          opcion = 0  
+          opcion = 11  
           ;;
         2)
           clear
