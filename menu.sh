@@ -33,8 +33,7 @@ while [ $opcion -ne 0 ]; do
           ;;
         2)
           clear
-          echo "Iniciando descarga de ficheros y directorios de SuiteCRM:";
-          sudo su
+          echo "Iniciando descarga de ficheros y directorios de SuiteCRM:"
           sudo git clone https://github.com/salesagility/SuiteCRM.git suitecrm
           sudo chmod -R 777 suitecrm
           sudo mv suitecrm /var/www/
