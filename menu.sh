@@ -28,6 +28,7 @@ while [ $opcion -ne 0 ]; do
           apt-get update
           apt-get install git -y
           clear
+          $opcion=0
           sudo /home/ubuntu/menu.sh
           ;;
         2)
@@ -59,7 +60,7 @@ while [ $opcion -ne 0 ]; do
           cd suitecrm/
           composer install
           clear
-          clear
+          $opcion=0
           sudo /home/ubuntu/menu.sh
           ;;
         3)
@@ -67,7 +68,8 @@ while [ $opcion -ne 0 ]; do
           echo "Instalando Apache:"
           sudo apt-get install apache2 -y
           clear
-          opcion=0
+          $opcion=0
+          sudo /home/ubuntu/menu.sh
           ;;
         4)
           clear
@@ -75,6 +77,7 @@ while [ $opcion -ne 0 ]; do
           sudo mysql -u root < script.sql
           sudo systemctl restart apache2
           clear
+          $opcion=0
           sudo /home/ubuntu/menu.sh
           ;;
         5)
@@ -89,6 +92,7 @@ while [ $opcion -ne 0 ]; do
           sudo a2dissite 000-default.conf
           sudo systemctl restart apache2
           clear
+          $opcion=0
           sudo /home/ubuntu/menu.sh
           ;;
         0)
