@@ -28,7 +28,7 @@ while [ $opcion -ne 0 ]; do
           apt-get update
           apt-get install git -y
           clear
-          opcion=0
+          sudo /home/ubuntu/menu.sh
           ;;
         2)
           clear
@@ -60,7 +60,7 @@ while [ $opcion -ne 0 ]; do
           composer install
           clear
           clear
-          opcion=0
+          sudo /home/ubuntu/menu.sh
           ;;
         3)
           clear
@@ -75,7 +75,7 @@ while [ $opcion -ne 0 ]; do
           sudo mysql -u root < script.sql
           sudo systemctl restart apache2
           clear
-          opcion=0
+          sudo /home/ubuntu/menu.sh
           ;;
         5)
           clear
@@ -89,7 +89,7 @@ while [ $opcion -ne 0 ]; do
           sudo a2dissite 000-default.conf
           sudo systemctl restart apache2
           clear
-          opcion=0
+          sudo /home/ubuntu/menu.sh
           ;;
         0)
           clear
@@ -105,4 +105,5 @@ while [ $opcion -ne 0 ]; do
 done
 
 echo ""
+
 clear
