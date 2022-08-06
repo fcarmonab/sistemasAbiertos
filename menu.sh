@@ -37,7 +37,7 @@ while [ $opcion -ne 0 ]; do
           sudo su
           sudo git clone https://github.com/salesagility/SuiteCRM.git suitecrm
           sudo chmod -R 777 suitecrm
-          mv suitecrm /var/www/
+          sudo mv suitecrm /var/www/
           cd /var/www/
           sudo chown -R www-data.www-data suitecrm
           sudo chmod -R 775 suitecrm
@@ -49,7 +49,7 @@ while [ $opcion -ne 0 ]; do
           echo "Iniciando instalacion de composer:"
           sudo apt-get install composer -y
           cd /var/www/suitecrm/
-          composer install
+          sudo composer install
           clear
           opcion=0
           ;;
