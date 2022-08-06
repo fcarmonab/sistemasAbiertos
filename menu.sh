@@ -29,7 +29,7 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get update
           sudo apt-get install git -y
           clear
-          opcion = 11  
+          opcion=2  
           ;;
         2)
           clear
@@ -44,6 +44,7 @@ while [ $opcion -ne 0 ]; do
           sudo chown -R www-data.www-data suitecrm
           sudo chmod -R 775 suitecrm
           clear
+          opcion=3
           ;;
         3)
           clear
@@ -52,12 +53,14 @@ while [ $opcion -ne 0 ]; do
           cd suitecrm/
           composer install
           clear
+          opcion=4
           ;;
         4)
           clear
           echo "Instalando Apache:"
           sudo apt-get install apache2 -y
           clear
+          opcion=5
           ;;
         5)
           clear
@@ -67,6 +70,7 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get install php7.4-cli php7.4-common php7.4-pgsql php7.4-json php7.4-opcache php7.4-mysql php7.4-mbstring php7.4-fpm php7.4-intl php7.4-simplexml  php7.4-gd php7.4-mcrypt php7.4-soap php7.4-bcmath libapache2-mod-php7.4 php7.4-xml php7.4-common php7.4-cli php7.4-curl php7.4-intl php7.4-xmlrpc php7.4-json php7.4-zip zip unzip -y
           sudo systemctl restart apache2
           clear
+          opcion=6
           ;;
         6)
           clear
@@ -74,6 +78,7 @@ while [ $opcion -ne 0 ]; do
           sudo mysql -u root < script.sql
           sudo systemctl restart apache2
           clear
+          opcion=7
           ;;
         7)
           clear
@@ -92,6 +97,7 @@ while [ $opcion -ne 0 ]; do
           sudo a2dissite 000-default.conf
           sudo systemctl restart apache2
           clear
+          opcion=0
           ;;
         0)
           clear
