@@ -1,6 +1,8 @@
 #! /bin/bash
 usuario=$(whoami)
 opcion=1
+clear
+
 echo "---------- MENU INSTALACION DE SUITECRM ----------"
 echo "=================================================="
 echo ""
@@ -27,6 +29,7 @@ while [ $opcion -ne 0 ]; do
           sudo apt-get update
           sudo apt-get install git -y
           clear
+          opcion = 0  
           ;;
         2)
           clear
