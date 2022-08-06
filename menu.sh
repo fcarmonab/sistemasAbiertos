@@ -72,6 +72,23 @@ while [ $opcion -ne 0 ]; do
           sudo systemctl restart apache2
           clear
           ;;
+        7)
+          clear
+          cd ~
+          cd tmp
+          cp php.ini temp1.ini
+          sudo chmod -R 777 php.ini
+          sudo mv php.ini /etc/php/7.4/apache2/php.ini
+          sudo systemctl restart apache2
+          cp suitecrm.conf temp2.conf
+          sudo chmod -R 777 suitecrm.conf
+          sudo mv suitecrm.conf /etc/apache2/sites-available/suitecrm.conf
+          sudo systemctl restart apache2
+          sudo a2ensite suitecrm.conf
+          sudo systemctl restart apache2
+          sudo a2dissite 000-default.conf
+          sudo systemctl restart apache2
+          clear
         0)
           clear
           echo "Saliendo del menu..."
