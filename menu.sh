@@ -30,7 +30,7 @@ read opcion
           ;;
         2)
           clear
-          echo "Iniciando descarga de SuiteCRM e Instalacion de Composer:"
+          echo "Iniciando descarga de SuiteCRM, php e Instalacion de Composer:"
           sudo mkdir tmp
           cd /tmp/
           sudo git clone https://github.com/salesagility/SuiteCRM.git suitecrm
